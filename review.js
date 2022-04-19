@@ -445,12 +445,12 @@ console.log(arr3)
 
 // Using the variable with the newly connected arrays, use spread operator to add something at the end.
 
-arr3 = [...arr3, 'five']
+// arr3 = [ ... arr3, 'five'] 
 console.log(arr3)
 
 // Using the variable with the newly connected arrays, use spread operator to add something at the beginning.
 
-arr3 = ['six', ..arr3]
+// arr3 = ['six', ...arr3]
 console.log(arr3)
 // ===== ACCESS =====
 
@@ -491,7 +491,7 @@ console.log('Here \s your ' +donutShop[1][0][1])
 
 
 // If Teo is a person, check to see if he is a male or a female. If male, print 'You got it right!' if not then print 'Wrong. Teo is going to remove you from the class.'.
-cosnt teo = 'person'
+const teo = 'person'
 const gender = "male"
 const isHungry = "he hun"
  if (teo=== 'person'){ 
@@ -509,7 +509,20 @@ const isHungry = "he hun"
 
 // If male, check to see if Teo is hungry. If Teo is 'hungry' then print 'Let's buy Teo some tacos!'. If Teo is 'not hungry' then print 'He doesn't need to eat.'. Anything else, print 'If Teo is not hungry, am I hungry?'
 
+let gend = 'male'
+let appe = 'hungry'
+
+if (gend = 'male'){
+  if (appe === 'hungry'){
+    console.log('Lets buy teo some tacos')
+  } else if (appe === 'not hungry'){
+    console.log('He dosent need to eat')
+  } else {console.log('If Teo is not hungry, am i hungry?')}
+}
+
 // Create a if/else ternary to check if Gustavo is the coolest. If coolest, print 'You got that right!', else print 'James wants to argue. He says he's the best!'
+ let gustavo = 'coolest'
+gustavo === 'coolest' ? console.log('You go that right') : console.log ('James wants to argue. He said hes the best.')
 
 // =================================================
 //                     FUNCTIONS
@@ -519,9 +532,27 @@ const isHungry = "he hun"
 
 // Create a function called sayGreeting and PRINT 'Hello, ma'amsir!'
 
+function sayGreeting(){
+  console.log('Hello')
+}
+sayGreeting()
 // Create a function that takes a string as a parameter. PRINT 'This is my (STRING)'. Please replace the (STRING) with the parameter. Don't play with me haha.
+let thatString = 'House'
+function printString (myStuff){
+  console.log(`This is my ${myStuff}`)
+}
+printString('House')
 
 // Create a function called add that takes in three number parameters. Create 3 variables and assign numerical values to them. Invoke your add() and pass in those three variables as arguments.
+let xo = Math.floor(Math.random()*10)
+let y = Math.floor(Math.random()*10)
+let z = Math.floor(Math.random()*10)
+
+function add (x,y,z){
+  return x+y+z
+}
+add(xo,y,z)
+console.log(z)
 
 // Create a function called fightClub() that accepts a name parameter.  If the name:
 // 'Teo' RETURN '1st rule: You do not talk about Fight Club.'
@@ -529,12 +560,45 @@ const isHungry = "he hun"
 // 'Liv' RETURN '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.'
 // 'Devin' RETURN '4th rule: Only two guys to a fight.'
 // Anything else, RETURN 'No shirts
+let theName = 'Liv'
+function fightClub (gup) {
+    switch(gup){
+      case 'Teo':
+        console.log('1st rule: YOU do not talk about Fight Club.')
+        break
+      case 'Manara' : 
+        console.log('2nd rule: YOU DO NOT TALK ABOUT FIGHT CLUB');
+        break;
+      case 'Liv' : 
+      console.log('3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over')
+      break;
+      case 'Devin' :
+        console.log('4th rule: Only two guys to a fight.')
+        break;
+        default:
+          console.log('No Shirts')
 
+    }
+}
+fightClub(theName)
 // Create a function called hello() that prints 'Hello'. Return an anonymous function inside hello() and have it print 'Goodbye'. Invoke your hello function in some way to see Hello and Goodbye in the console.
 
-// Create a function expression with your first name as the variable and then print your first and last name
+function hello (){
+  console.log ('Hello')
+  return function () {
+    console.log('goodye')
+  }
+}
+hello()()
 
+// Create a function expression with your first name as the variable and then print your first and last name
+let first = 'Jahlun'
+let last = 'Patterson'
+function bigName (first, last) {
+  console.log(`${first} ${last}`)
+}
 // Create an arrow function that accepts a number and have it return that number doubled
+const foo = (x) => {return x * 2}
 
 // =================================================
 //                     OBJECTS
@@ -542,9 +606,21 @@ const isHungry = "he hun"
 
 // Create an object and call it human. Add a name, age, and location property. Give the properties values.
 
+const human = {
+}
+Object.defineProperties(human, {
+  Age:{
+  value:34}
+, name1 : {value:'Jahlun',}, 
+location1 : {value: 'Dallas'}})
+
 // Access the name using dot notation
+console.log(human.name1)
 
 // Access the age using square brackets
+// console.log(human[Age])
+// console.log(Object.defineProperties(human))
+// Object.defineProperties(human, Age)
 
 // Use object destructuring to access location
 
@@ -566,17 +642,34 @@ const bulbasaur = {
 }
 
 // Print overgrow
+console.log(bulbasaur.abilities[0])
 
 // Print cut
+console.log(bulbasaur.moves[2])
 
 // Print Bulbahhhh!!!!!
+bulbasaur.sound()
 
 // Add a height of 7 to bulbasaur using the dot notation. (Don't change bulbasaur object manually)
+Object.defineProperties(bulbasaur, {
+  height: {value: 7}
+})
+
 
 // Add a property called order and assign it a value of 1 using the square brackets. (Don't change bulbasaur object manually)
 
+
+
+
 // Print an array that contains every single properties in bulbasaur
+console.log(bulbasaur)
 
 // Print every single properties one by one in the console
+console.log(bulbasaur.name)
+console.log(bulbasaur.abilities)
+console.log(bulbasaur.sound)
+console.log(bulbasaur.moves)
 
 // Print an array that contains every single values in bulbasaur
+
+let arrayEnd= [bulbasaur.name, bulbasaur.abilities, bulbasaur.moves}
