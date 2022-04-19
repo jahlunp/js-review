@@ -672,4 +672,4 @@ console.log(bulbasaur.moves)
 
 // Print an array that contains every single values in bulbasaur
 
-let arrayEnd= [bulbasaur.name, bulbasaur.abilities, bulbasaur.moves}
+let arrayEnd= [bulbasaur.name, bulbasaur.abilities, bulbasaur.moves]
